@@ -48,7 +48,7 @@ export const Todo = () => {
 
   return (
     <div className="todo-container">
-      <img src="/Untitled-design-8--unscreen.gif" />
+    <img src="/Untitled-design-8--unscreen.gif" className="todo-gif" alt="Todo Animation" />
 
       <div className="todo">
         <div className="todo-header">To-Do List</div>
