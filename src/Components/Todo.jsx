@@ -48,26 +48,39 @@ export const Todo = () => {
 
   return (
     <div className="todo-container">
-      {/* GIF Positioned on Top */}
-      <img src="/public/Untitled-design-8--unscreen.gif" alt="Todo Animation" className="todo-gif" />
+      <img
+        src="/public/Untitled-design-8--unscreen.gif"
+        alt="Todo Animation"
+        className="todo-gif"
+      />
 
       <div className="todo">
         <div className="todo-header">To-Do List</div>
+
         <div className="todo-add">
-          <input type="text" ref={inputRef} placeholder="Add your task" className="todo-input" />
-          <div className="todo-add-btn" onClick={add}>ADD</div>
+          <input
+            type="text"
+            ref={inputRef}
+            placeholder="Add your task"
+            className="todo-input"
+          />
+          <div className="todo-add-btn" onClick={add}>
+            ADD
+          </div>
         </div>
+
         <div className="todo-list">
-          {todos.map((item, index) => (
-            <Todoitems
-            key={item.no}         // ✅ Use unique task ID, not array index
-            no={item.no}
-            text={item.text}
-            done={item.done}
-            onToggle={toggleDone}
-            onDelete={deleteTask}
-          />          
-          ))}
+          {todos.length > 0 &&
+            todos.map((item) => (
+              <Todoitems
+                key={item.no}
+                no={item.no}
+                text={item.text}
+                done={item.done}
+                onToggle={toggleDone}
+                onDelete={deleteTask}
+              />
+            ))}
         </div>
       </div>
     </div>

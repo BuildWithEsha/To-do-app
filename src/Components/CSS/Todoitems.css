@@ -1,58 +1,104 @@
 .todoitems {
-    display: flex;
-    justify-content: space-between;
-    padding: 16px 0px;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .todoitems-container {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 /* Circle styling */
 .custom-circle {
-    width: 15px;
-    height: 15px;
-    border: 2px solid bisque;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  width: 15px;
+  height: 15px;
+  border: 2px solid bisque;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
 }
-
 
 .custom-circle.filled {
-    background-color: #83666a; /* Your custom filled color */
-  }
-  
-  .todoitems-text.done {
-    text-decoration: line-through;
-    color:#85575e ;
-  }
-
-
-/* Task text */
-.todoitems-text {
-    padding-left: 20px;
-    color: bisque;
-    font-size: 25px;
-    transition: 0.3s;
+  background-color: #83666a;
 }
 
+.todoitems-text {
+  padding-left: 20px;
+  color: bisque;
+  font-size: 25px;
+  transition: 0.3s;
+  word-break: break-word;
+}
 
+.todoitems-text.done {
+  text-decoration: line-through;
+  color: #85575e;
+}
 
-/* Dustbin styling (favicon style) */
+/* Dustbin styling */
 .dustbin {
-    width: 15px;
-    height: 15px;
-    background-image: url('https://cdn-icons-png.flaticon.com/512/3096/3096673.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: pointer;
-    transition: transform 0.2s ease;
+  width: 15px;
+  height: 15px;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/3096/3096673.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
 }
 
 .dustbin:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/* ✅ Responsive Tweaks */
+@media (max-width: 768px) {
+  .todoitems {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 12px 0;
+  }
+
+  .todoitems-text {
+    font-size: 20px;
+    padding-left: 12px;
+  }
+
+  .custom-circle,
+  .dustbin {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .todoitems {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .todoitems-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .todoitems-text {
+    font-size: 18px;
+    padding-left: 10px;
+  }
+
+  .custom-circle,
+  .dustbin {
+    width: 13px;
+    height: 13px;
+  }
 }
