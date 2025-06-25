@@ -1,0 +1,58 @@
+.todoitems {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0px;
+    align-items: center;
+}
+
+.todoitems-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Circle styling */
+.custom-circle {
+    width: 15px;
+    height: 15px;
+    border: 2px solid bisque;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.custom-circle.filled {
+    background-color: #83666a; /* Your custom filled color */
+  }
+  
+  .todoitems-text.done {
+    text-decoration: line-through;
+    color:#85575e ;
+  }
+
+
+/* Task text */
+.todoitems-text {
+    padding-left: 20px;
+    color: bisque;
+    font-size: 25px;
+    transition: 0.3s;
+}
+
+
+
+/* Dustbin styling (favicon style) */
+.dustbin {
+    width: 15px;
+    height: 15px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/3096/3096673.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.dustbin:hover {
+    transform: scale(1.1);
+}
